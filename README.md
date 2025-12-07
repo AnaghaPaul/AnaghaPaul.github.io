@@ -8,7 +8,7 @@
 
 ## Work Experience
 **Research Analyst Intern @ VOSYN (_June 2025 - August 2025_)**
-- Conducted research and compiled datasets from platforms such as Crunchbase and HubSpot to support market and partnership analysis. 
+- Conducted research and compiled datasets from platforms such as Crunchbase and HubSpot to support market and partnership analysis.
 **Quality Lead @ Inclusys Orge (_May 2022- July 2023_)**
 - Led and coordinated data entry and data annotation projects, ensuring high accuracy and consistency across deliverables.
 ## Projects
@@ -20,14 +20,18 @@
 - Applied time series visualization with annotated events (e.g., iPhone launches) to identify significant stock movements and macroeconomic influences.
 - Revealed insights into Apple’s higher volatility and superior growth compared to the S&P 500, illustrating the risk-return tradeoff in equity investing.
 
-![Apple Vs S&P 500](https://github.com/AnaghaPaul/PolysubstanceUse_PerceivedMentalHealth/blob/main/Poly%20Substance%20Use%20and%20it%E2%80%99s%20impact%20on%20perceived%20Mental%20Health.jpg)
+![Apple Vs S&P 500](https://github.com/AnaghaPaul/StockMarket-Analysis_Apple-SandP500/blob/main/apple_thumbnail.jpg)
 
-### Decoding Physical and Cognitive Impacts of Particulate Matter Concentrations at Ultra-Fine Scales
-[Publication](https://www.mdpi.com/1424-8220/22/11/4240)
+### Waze User Churn and Retention Strategy
+[GitHub Repository](https://github.com/AnaghaPaul/Waze_User-Churn_Analysis)
 
-Used **Matlab** to train over 100 machine learning models which estimated particulate matter concentrations based on a suite of over 300 biometric variables. We found biometric variables can be used to accurately estimate particulate matter concentrations at ultra-fine spatial scales with high fidelity (r2 = 0.91) and that smaller particles are better estimated than larger ones. Inferring environmental conditions solely from biometric measurements allows us to disentangle key interactions between the environment and the body.
+- Built a machine learning model to predict user churn in Waze using a synthetic dataset
+- Performed data cleaning, EDA, and feature engineering to identify key retention factors (Python, Pandas, NumPy).
+- Handled class imbalance with SMOTE and implemented predictive models (Scikit-learn).
+- Developed data-driven retention strategies and visualized insights using Tableau & Matplotlib. 
+- Key Insights - A noticeable reduction in **driving days** and **activity days** was identified as a strong early warning sign of user churn. These behavioral metrics can be used proactively to improve retention strategies.
 
-![Bike Study](/assets/img/bike_study.jpeg)
+![Waze](https://github.com/AnaghaPaul/Waze_User-Churn_Analysis/blob/main/images/WAZE.png)
 
 ## Talks & Lectures
 - Causality: The new science of an old question - GSP Seminar, Fall 2021
