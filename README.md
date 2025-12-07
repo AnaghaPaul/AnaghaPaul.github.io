@@ -1,28 +1,26 @@
 # Data Analyst
 
-#### Technical Skills: Python, SQL, AWS, Snowflake, MATLAB
+#### Technical Skills: Excel, Python, SQL, Tableau, AWS
 
-## Education
-- Ph.D., Physics | The University of Texas at Dallas (_May 2022_)								       		
-- M.S., Physics	| The University of Texas at Dallas (_December 2019_)	 			        		
-- B.S., Physics | The University of Texas at Dallas (_May 2017_)
+## Education							       		
+- Data Analytics for Businness	|  St. Clair College of Applied Arts and Technology (_April 2025_)	 			        		
+- B.S., Physics | Sacred Heart College, Thevara, India (_June 2021_)
 
 ## Work Experience
-**Data Scientist @ Toyota Financial Services (_June 2022 - Present_)**
-- Uncovered and corrected missing step in production data pipeline which impacted over 70% of active accounts
-- Redeveloped loan originations model which resulted in 50% improvement in model performance and saving 1 million dollars in potential losses
-
-**Data Science Consultant @ Shawhin Talebi Ventures LLC (_December 2020 - Present_)**
-- Conducted data collection, processing, and analysis for novel study evaluating the impact of over 300 biometrics variables on human performance in hyper-realistic, live-fire training scenarios
-- Applied unsupervised deep learning approaches to longitudinal ICU data to discover novel sepsis sub-phenotypes
-
+**Research Analyst Intern @ VOSYN (_June 2025 - August 2025_)**
+- Conducted research and compiled datasets from platforms such as Crunchbase and HubSpot to support market and partnership analysis. 
+**Quality Lead @ Inclusys Orge (_May 2022- July 2023_)**
+- Led and coordinated data entry and data annotation projects, ensuring high accuracy and consistency across deliverables.
 ## Projects
-### Data-Driven EEG Band Discovery with Decision Trees
-[Publication](https://www.mdpi.com/1424-8220/22/8/3048)
+### FINANCIAL MARKET PERFORMANCE ANALYSIS: APPLE INC. VS. S&P 500
+[GitHub Repository](https://github.com/AnaghaPaul/StockMarket-Analysis_Apple-SandP500)
 
-Developed objective strategy for discovering optimal EEG bands based on signal power spectra using **Python**. This data-driven approach led to better characterization of the underlying power spectrum by identifying bands that outperformed the more commonly used band boundaries by a factor of two. The proposed method provides a fully automated and flexible approach to capturing key signal components and possibly discovering new indices of brain activity.
+- Conducted a comparative financial analysis between Apple Inc. and the S&P 500 Index using historical stock data from Yahoo Finance, leveraging Python libraries such as **pandas**, **yfinance**, and **matplotlib**.
+- Normalized closing prices to enable scale-agnostic comparison and calculated daily returns to evaluate short-term volatility and growth trends.
+- Applied time series visualization with annotated events (e.g., iPhone launches) to identify significant stock movements and macroeconomic influences.
+- Revealed insights into Apple’s higher volatility and superior growth compared to the S&P 500, illustrating the risk-return tradeoff in equity investing.
 
-![EEG Band Discovery](/assets/img/eeg_band_discovery.jpeg)
+![Apple Vs S&P 500](https://github.com/AnaghaPaul/PolysubstanceUse_PerceivedMentalHealth/blob/main/Poly%20Substance%20Use%20and%20it%E2%80%99s%20impact%20on%20perceived%20Mental%20Health.jpg)
 
 ### Decoding Physical and Cognitive Impacts of Particulate Matter Concentrations at Ultra-Fine Scales
 [Publication](https://www.mdpi.com/1424-8220/22/11/4240)
