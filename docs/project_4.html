@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -183,3 +184,190 @@
 
 </body>
 </html>
+=======
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Polysubstance Use & Mental Health | Project</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+
+<div id="wrapper" class="fade-in">
+
+  <!-- Header -->
+  <header id="header">
+    <a href="index.html" class="logo">← Back to Portfolio</a>
+  </header>
+
+  <!-- Main -->
+  <div id="main">
+
+    <section class="post">
+
+      <header class="major">
+        <h1>Polysubstance Use & Mental Health</h1>
+        <p>
+          Exploring how patterns of multiple substance use relate to perceived mental health
+        </p>
+    </header>
+
+      <!-- Why This Study -->
+      <h2>Why This Study Matters</h2>
+      <p>
+        Mental health is one of the most pressing public health concerns today, yet the
+        relationship between substance use and mental well-being is complex. While many
+        studies focus on single substances, real-world behavior often involves the use of
+        multiple substances.
+      </p>
+      <p>
+        This project investigates whether polysubstance use is associated with differences
+        in perceived mental health, using a large-scale national survey dataset. The findings
+        can help inform targeted interventions and evidence-based policy decisions.
+      </p>
+
+      <!-- Dataset -->
+      <h2>Dataset</h2>
+      <p>
+        The analysis is based on the <strong>Canadian Tobacco and Nicotine Survey 2022</strong>,
+        collected by Statistics Canada.
+      </p>
+      <ul>
+        <li><strong>Type:</strong> National survey data</li>
+        <li><strong>Observations:</strong> 12,133 individuals</li>
+        <li><strong>Features:</strong> 88 variables</li>
+        <li><strong>Key domains:</strong> Substance use, demographics, perceived mental health</li>
+      </ul>
+
+      <!-- Study Aims -->
+      <h2>Study Aims</h2>
+      <ul>
+        <li>Cluster individuals based on substance use patterns and demographic characteristics</li>
+        <li>Test the association between identified clusters and perceived mental health</li>
+      </ul>
+
+      <!-- Methodology -->
+      <h2>Methodology</h2>
+
+      <h3>1. Data Cleaning</h3>
+      <p>
+        Survey responses such as <em>“valid skip”</em> and <em>“not stated”</em> were treated as
+        distinct categories to preserve information rather than removing records.
+      </p>
+
+      <h3>2. Feature Engineering</h3>
+      <ul>
+        <li>Removed redundant or unrelated variables</li>
+        <li>Retained core substance use variables: alcohol, cannabis, smoking, and vaping</li>
+        <li>Included demographic features such as age and gender</li>
+        <li>Excluded variables that could introduce data leakage</li>
+      </ul>
+
+      <h3>3. Unsupervised Modelling</h3>
+      <p>
+        Two clustering techniques were applied to uncover latent patterns in the data:
+      </p>
+      <ul>
+        <li>
+          <strong>K-Modes Clustering</strong> — optimal clusters selected using the
+          Elbow Method and Silhouette Score
+        </li>
+        <figure>
+    <img src="images/polysubstance_image1.jpg" alt="Returns" style="width:100%; border-radius:10px;">
+    </figure>
+        <li>
+          <strong>Bayesian Gaussian Mixture</strong> — optimal number of classes
+          determined using Bayesian Information Criterion (BIC) and Silhouette Score
+        </li>
+         <figure>
+    <img src="images/polysubstance_image2.jpg" alt="Returns" style="width:100%; border-radius:10px;">
+    </figure>
+      </ul>
+      <p>
+        Models were trained on two datasets:
+      </p>
+      <ul>
+        <li>Substance use variables only</li>
+        <li>Substance use variables combined with demographics</li>
+      </ul>
+
+      <p>
+        Cluster interpretability was enhanced using <strong>Multiple Correspondence Analysis (MCA)</strong>
+        for visualization.
+      </p>
+      <figure>
+    <img src="images/kmode_cluster.jpg" alt="kmode cluster" style="width:100%; border-radius:10px;">
+    <figcaption>
+      <strong>Kmode Clustering Results.</strong>
+    </figcaption>
+  </figure>
+  <figure>
+    <img src="images/bayessian_cluster.jpg" alt="Bayesian Gaussian Mixture Cluster" style="width:100%; border-radius:10px;">
+    <figcaption>
+      <strong>Bayesian Gaussian Mixture Clusters.</strong>
+    </figcaption>
+  </figure>
+      <!-- Association Testing -->
+      <h2>Association Testing</h2>
+      <p>
+        To evaluate whether the identified clusters were associated with perceived mental
+        health, statistical testing was conducted:
+      </p>
+      <ul>
+        <li><strong>Chi-Square Test</strong> to assess statistical significance</li>
+        <li><strong>Cramér’s V</strong> to measure the strength of association</li>
+      </ul>
+
+      <!-- Results -->
+      <h2>Key Results</h2>
+      <ul>
+        <li>All clustering approaches showed statistically significant associations (p &lt; 0.05)</li>
+        <li>Cramér’s V values ranged from ~0.08 to ~0.10, indicating weak but meaningful associations</li>
+        <li>Including demographic variables altered cluster structure but did not eliminate associations</li>
+        <li>Bayesian Gaussian Mixture models showed slightly stronger associations overall</li>
+      </ul>
+
+      <!-- Interpretation -->
+      <h2>Interpretation</h2>
+      <p>
+        While the measured associations were modest, this is expected in public health and
+        social science research, where outcomes like mental health are influenced by many
+        interacting factors.
+      </p>
+      <p>
+        Even weak associations can be highly relevant when working with large populations
+        and complex behavioral data, reinforcing the value of clustering-based approaches
+        for exploratory analysis.
+      </p>
+
+      <!-- Conclusion -->
+      <h2>Conclusion</h2>
+      <p>
+        This study demonstrates that polysubstance use patterns are significantly associated
+        with perceived mental health outcomes. By combining unsupervised learning with
+        statistical testing, the analysis provides a nuanced understanding of how substance
+        use behaviors relate to mental well-being.
+      </p>
+      <p>
+        From a data analytics perspective, this project highlights the practical application
+        of clustering, dimensionality reduction, and association testing on large-scale
+        survey data to generate actionable insights.
+      </p>
+
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <p>© Anagha Paul | Data Analyst</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
+>>>>>>> 3bacf70b7a37487e42e873f4678d919abc092e31
