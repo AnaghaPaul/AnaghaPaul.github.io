@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Modern E-Commerce Data Warehouse</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+
+<div id="wrapper" class="fade-in">
+
+  <!-- Header -->
+  <header id="header">
+    <a href="index.html" class="logo">← Back to Portfolio</a>
+  </header>
+
+  <!-- Main -->
+  <div id="main">
+
+    <!-- Project Intro -->
+    <section class="post">
+      <header>
+        <h1>Modern E-Commerce Data Warehouse for Growth & Customer Analytics</h1>
+        <p>
+          End-to-end data lifecycle for an e-commerce business, transforming raw operational data 
+          into high-quality, analytics-ready insights to drive strategic, data-driven decisions.
+        </p>
+      </header>
+
+      <!-- Project Overview -->
+      <section>
+        <h2>Project Overview</h2>
+        <p>This project demonstrates a structured approach to building a modern data warehouse, performing SQL-based analysis, and visualizing results in Power BI dashboards for actionable business insights.</p>
+      </section>
+
+      <!-- Stage 1: Data Warehouse -->
+      <section>
+        <h2>Stage 1: Data Warehouse Creation (Medallion Architecture)</h2>
+        <p>
+          Data is ingested from multiple source systems via ETL pipelines in a SQL Server-based data warehouse, following the <strong>Bronze, Silver, Gold</strong> layers:
+        </p>
+
+        <div class="cards">
+          <div class="card">
+            <h4>Bronze Layer</h4>
+            <p>Raw data ingested in original format to preserve fidelity.</p>
+          </div>
+          <div class="card">
+            <h4>Silver Layer</h4>
+            <p>Data cleansed, standardized, and enriched for consistency.</p>
+          </div>
+          <div class="card">
+            <h4>Gold Layer</h4>
+            <p>Business-ready datasets modeled using star schema for analytical queries.</p>
+          </div>
+        </div>
+
+        <p><strong>Benefits:</strong> Improved data quality, scalable analytics, and faster query performance enabling actionable business insights.</p>
+
+        <figure>
+          <img src="images/DataArchitecture.png" alt="Data Architecture" style="width:100%; border-radius:10px;">
+          <figcaption><strong>Data Architecture.</strong> Bronze, Silver, Gold layers for structured ETL processing.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="images/DataFlow.png" alt="Data Flow" style="width:100%; border-radius:10px;">
+          <figcaption><strong>Data Flow Diagram.</strong> Overview of ETL pipelines and data movement across layers.</figcaption>
+        </figure>
+      </section>
+
+      <!-- Stage 2: SQL Analysis -->
+      <section>
+        <h2>Stage 2: SQL-Based Data Analysis</h2>
+        <p>The data analysis process follows five stages: <strong>Explore → Profile → Clean → Shape → Analyze</strong>.</p>
+
+        <figure>
+          <img src="images/DataAnalysisWorkFlow.png" alt="Data Analysis Workflow" style="width:100%; border-radius:10px;">
+          <figcaption><strong>Data Analysis Workflow.</strong> Structured approach for transforming raw data into actionable insights.</figcaption>
+        </figure>
+
+        <h3>1. Explore</h3>
+        <ul>
+          <li>Examine datasets to understand structure and relationships.</li>
+          <li>Identify missing values, anomalies, and patterns of interest.</li>
+          <li><strong>Benefit:</strong> Provides a clear overview of the data landscape.</li>
+        </ul>
+
+        <h3>2. Profile</h3>
+        <ul>
+          <li>Generate descriptive statistics and assess data quality metrics.</li>
+          <li><strong>Benefit:</strong> Early detection of inconsistencies ensures reliable downstream analysis.</li>
+        </ul>
+
+        <h3>3. Clean</h3>
+        <ul>
+          <li>Handle missing/inconsistent data, remove duplicates, standardize formats.</li>
+          <li><strong>Benefit:</strong> Produces accurate, trustworthy datasets for analysis.</li>
+        </ul>
+
+        <h3>4. Shape</h3>
+        <ul>
+          <li>Transform data into analytical-ready structures leveraging star schema outputs.</li>
+          <li><strong>Benefit:</strong> Simplifies querying and integration with visualization tools.</li>
+        </ul>
+
+        <h3>5. Analyze</h3>
+        <ul>
+          <li>Perform exploratory and descriptive analysis on customer behavior, product performance, and sales trends.</li>
+          <li>Conduct trend analysis for seasonality, growth, and revenue drivers.</li>
+          <li><strong>Benefit:</strong> Enables actionable, data-driven business decisions.</li>
+        </ul>
+
+      </section>
+
+      <!-- Tools & Links -->
+      <section>
+        <h2>Tools & Important Links</h2>
+        <ul>
+          <li>SQL Server, SSMS, Python, Power BI</li>
+          <li><a href="datasets/">Project Datasets (CSV)</a></li>
+          <li><a href="https://www.microsoft.com/en-us/sql-server/sql-server-downloads">SQL Server Express</a></li>
+          <li><a href="https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16">SSMS</a></li>
+          <li><a href="https://www.drawio.com/">Draw.io</a> – for architecture and ETL diagrams</li>
+          <li><a href="https://www.notion.com/templates/sql-data-warehouse-project">Notion Project Template</a></li>
+        </ul>
+      </section>
+
+      <p>
+        🔗 <a href="https://github.com/AnaghaPaul/SqlDataWarehouseProject" target="_blank">
+        View full project, code, and documentation on GitHub</a>
+      </p>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        Project by Anagha Paul · Data Analytics & Data Warehouse Case Study
+      </p>
+    </footer>
+
+  </div>
+</div>
+</body>
+</html>
