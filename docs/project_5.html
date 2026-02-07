@@ -1,13 +1,13 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
   <title>Modern Retail & Order Management Data Warehouse</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="assets/css/main.css" />
 </head>
-<body class="is-preload">
 
+<body class="is-preload">
 <div id="wrapper" class="fade-in">
 
   <!-- Header -->
@@ -16,15 +16,14 @@
   </header>
 
   <!-- Main -->
-  <div id="main">
+  <main id="main">
 
-    <!-- Project Intro -->
     <section class="post">
       <header>
         <h1>Modern Retail & Order Management Data Warehouse</h1>
         <p>
-          SQL Server–based data warehouse for a retail company selling bicycles, sports clothing, 
-          and components across multiple international markets. Supports sales analysis, customer behavior, 
+          SQL Server–based data warehouse for a retail company selling bicycles, sports clothing,
+          and components across multiple international markets. Supports sales analysis, customer behavior,
           product performance, and order lifecycle reporting using a dimensional star schema model.
         </p>
       </header>
@@ -33,18 +32,16 @@
       <section>
         <h2>Project Overview</h2>
         <p>
-          The data warehouse integrates CRM and ERP source systems, consolidates operational data, and delivers analytics-ready datasets.
-          Role-playing Date dimensions enable time-based analysis across order, shipping, and due dates. 
-          Power BI dashboards visualize insights for business decision-making.
+          The data warehouse integrates CRM and ERP source systems, consolidates operational data,
+          and delivers analytics-ready datasets. Role-playing date dimensions enable time-based
+          analysis across order, shipping, and due dates. Power BI dashboards visualize insights
+          for business decision-making.
         </p>
       </section>
 
-      <!-- Stage 1: Data Warehouse Creation -->
+      <!-- Stage 1 -->
       <section>
         <h2>Stage 1: Data Warehouse Creation (Medallion Architecture)</h2>
-        <p>
-          Implemented using <strong>Bronze, Silver, Gold</strong> layers:
-        </p>
 
         <div class="cards">
           <div class="card">
@@ -53,109 +50,115 @@
           </div>
           <div class="card">
             <h4>Silver Layer</h4>
-            <p>Data cleansed, standardized, deduplicated, and enriched with reusable reference data (e.g., calendar table).</p>
+            <p>Data cleansed, standardized, deduplicated, and enriched with reusable reference data.</p>
           </div>
           <div class="card">
             <h4>Gold Layer</h4>
-            <p>Business-ready datasets modeled using star schema with fact and dimension tables, optimized for SQL queries and Power BI reporting.</p>
+            <p>Business-ready datasets modeled using a star schema optimized for analytics and BI.</p>
           </div>
         </div>
 
-        <p><strong>Benefits:</strong> Incremental improvement in data quality, scalable analytics, and faster query performance enabling reliable business insights.</p>
+        <p>
+          <strong>Benefits:</strong> Improved data quality, scalable analytics, and faster query
+          performance enabling reliable business insights.
+        </p>
 
         <figure>
-          <img src="images/DataArchitecture.png" alt="Data Architecture" style="width:100%; border-radius:10px;">
-          <figcaption><strong>Data Architecture.</strong> Bronze, Silver, Gold layers for structured ETL processing.</figcaption>
+          <img src="images/DataArchitecture.png" alt="Medallion Data Architecture" />
+          <figcaption>
+            <strong>Data Architecture.</strong> Bronze, Silver, and Gold layers for structured ETL processing.
+          </figcaption>
+        </figure>
+
+        <!-- FIXED IMAGE NAME (case-sensitive) -->
+        <figure>
+          <img src="images/fact_table.png" alt="Fact Table Design" />
+          <figcaption>
+            <strong>Fact Table.</strong> Centralized sales transactions supporting dimensional analysis.
+          </figcaption>
         </figure>
 
         <figure>
-          <img src="images/FactTable.png" alt="Data Architecture" style="width:100%; border-radius:10px;">
-          <figcaption><strong></strong></figcaption>
+          <img src="images/DataFlow.png" alt="ETL Data Flow Diagram" />
+          <figcaption>
+            <strong>Data Flow Diagram.</strong> ETL pipelines from CRM & ERP to analytics-ready warehouse tables.
+          </figcaption>
         </figure>
-
-        <figure>
-          <img src="images/DataFlow.png" alt="Data Flow" style="width:100%; border-radius:10px;">
-          <figcaption><strong>Data Flow Diagram.</strong> ETL pipelines moving data from CRM & ERP to the warehouse.</figcaption>
-        </figure>
-
       </section>
 
-      <!-- Stage 2: SQL Analysis -->
+      <!-- Stage 2 -->
       <section>
         <h2>Stage 2: SQL-Based Data Analysis</h2>
-        <p>Data analysis follows five structured stages: <strong>Explore → Profile → Clean → Shape → Analyze</strong>.</p>
+        <p>Analysis follows five structured stages: <strong>Explore → Profile → Clean → Shape → Analyze</strong>.</p>
+
         <figure>
-          <img src="images/DataAnalysisWorkFlow.png" alt="Data Analysis Workflow" style="width:100%; border-radius:10px;">
-          <figcaption><strong>Data Analysis Workflow.</strong> Structured approach for transforming curated warehouse data into actionable insights.</figcaption>
+          <img src="images/DataAnalysisWorkFlow.png" alt="Data Analysis Workflow" />
+          <figcaption>
+            <strong>Data Analysis Workflow.</strong> Transforming curated warehouse data into actionable insights.
+          </figcaption>
         </figure>
 
-        <h3>1. Explore</h3>
+        <h3>Explore</h3>
         <ul>
-          <li>Examine datasets to understand structure, relationships, and anomalies.</li>
-          <li><strong>Benefit:</strong> Provides an overview of data landscape for planning transformations.</li>
+          <li>Understand structure, relationships, and anomalies</li>
+          <li><strong>Benefit:</strong> Guides transformation planning</li>
         </ul>
 
-        <h3>2. Profile</h3>
+        <h3>Profile</h3>
         <ul>
-          <li>Generate descriptive statistics and assess data quality metrics.</li>
-          <li><strong>Benefit:</strong> Early detection of inconsistencies ensures reliable analysis.</li>
+          <li>Assess statistics and data quality</li>
+          <li><strong>Benefit:</strong> Early issue detection</li>
         </ul>
 
-        <h3>3. Clean</h3>
+        <h3>Clean</h3>
         <ul>
-          <li>Handle missing/inconsistent data, remove duplicates, standardize formats.</li>
-          <li><strong>Benefit:</strong> Produces accurate, trustworthy datasets for downstream analysis.</li>
+          <li>Handle missing values, duplicates, and inconsistencies</li>
+          <li><strong>Benefit:</strong> Trustworthy datasets</li>
         </ul>
 
-        <h3>4. Shape</h3>
+        <h3>Shape</h3>
         <ul>
-          <li>Transform data into analytical-ready structures using fact and dimension tables from the star schema.</li>
-          <li><strong>Benefit:</strong> Simplifies querying and integration with BI tools.</li>
+          <li>Transform data into star-schema structures</li>
+          <li><strong>Benefit:</strong> Simplified querying and BI integration</li>
         </ul>
 
-        <h3>5. Analyze</h3>
+        <h3>Analyze</h3>
         <ul>
-          <li>Perform exploratory analysis on customer behavior, product performance, and sales trends.</li>
-          <li>Identify seasonality, growth patterns, and revenue drivers.</li>
-          <li><strong>Benefit:</strong> Enables actionable business decisions and data-driven strategy.</li>
+          <li>Identify trends, seasonality, and revenue drivers</li>
+          <li><strong>Benefit:</strong> Actionable business insights</li>
         </ul>
-
       </section>
 
-      <!-- Stage 3: Power BI Visualization -->
+      <!-- Stage 3 -->
       <section>
         <h2>Stage 3: Power BI Visualization</h2>
         <p>
-          Star-schema data is visualized in Power BI dashboards for interactive slicing, drill-down, and KPI monitoring. 
-          Dashboards highlight products, sales trends, and customer segments across international markets.
+          Star-schema data is visualized in Power BI dashboards with interactive filtering,
+          drill-downs, and KPI tracking across international markets.
         </p>
-        <p><strong>Benefit:</strong> Clear, interactive view of business performance to support strategic decisions.</p>
+        <p><strong>Benefit:</strong> Clear, decision-ready business intelligence.</p>
       </section>
 
-      <!-- Tools & Links -->
+      <!-- Tools -->
       <section>
         <h2>Tools & Important Links</h2>
         <ul>
           <li>SQL Server, SSMS, Python, Power BI</li>
           <li><a href="datasets/">Project Datasets (CSV)</a></li>
-          <li><a href="https://www.microsoft.com/en-us/sql-server/sql-server-downloads">SQL Server Express</a></li>
-          <li><a href="https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16">SSMS</a></li>
-          <li><a href="https://www.drawio.com/">Draw.io</a> – for architecture and ETL diagrams</li>
-          <li><a href="https://www.notion.com/templates/sql-data-warehouse-project">Notion Project Template</a></li>
-          <li><a href="https://github.com/AnaghaPaul/SqlDataWarehouseProject" target="_blank">View full project on GitHub</a></li>
+          <li><a href="https://www.microsoft.com/sql-server/sql-server-downloads">SQL Server Express</a></li>
+          <li><a href="https://learn.microsoft.com/sql/ssms/">SSMS</a></li>
+          <li><a href="https://www.drawio.com/">Draw.io</a></li>
+          <li><a href="https://github.com/AnaghaPaul/SqlDataWarehouseProject" target="_blank">
+            View Full Project on GitHub</a></li>
         </ul>
       </section>
 
-      <!-- Footer -->
       <footer>
-        <p>
-          Project by Anagha Paul · Data Analytics & Data Warehouse Case Study · MIT License
-        </p>
+        <p>Project by Anagha Paul · Data Warehouse Case Study · MIT License</p>
       </footer>
-
     </section>
 
-  </div>
+  </main>
 </div>
 </body>
 </html>
