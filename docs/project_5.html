@@ -70,4 +70,88 @@
 
         <figure>
           <img src="docs/DataFlow.png" alt="Data Flow" style="width:100%; border-radius:10px;">
-          <figcaption><strong>Data Flow Diagram.</strong> ETL pipelines moving data from CRM & ERP to the warehouse.</figcaptio
+          <figcaption><strong>Data Flow Diagram.</strong> ETL pipelines moving data from CRM & ERP to the warehouse.</figcaption>
+        </figure>
+
+      </section>
+
+      <!-- Stage 2: SQL Analysis -->
+      <section>
+        <h2>Stage 2: SQL-Based Data Analysis</h2>
+        <p>Data analysis follows five structured stages: <strong>Explore → Profile → Clean → Shape → Analyze</strong>.</p>
+
+        <figure>
+          <img src="docs/DataAnalysisWorkFlow.png" alt="Data Analysis Workflow" style="width:100%; border-radius:10px;">
+          <figcaption><strong>Data Analysis Workflow.</strong> Structured approach for transforming curated warehouse data into actionable insights.</figcaption>
+        </figure>
+
+        <h3>1. Explore</h3>
+        <ul>
+          <li>Examine datasets to understand structure, relationships, and anomalies.</li>
+          <li><strong>Benefit:</strong> Provides an overview of data landscape for planning transformations.</li>
+        </ul>
+
+        <h3>2. Profile</h3>
+        <ul>
+          <li>Generate descriptive statistics and assess data quality metrics.</li>
+          <li><strong>Benefit:</strong> Early detection of inconsistencies ensures reliable analysis.</li>
+        </ul>
+
+        <h3>3. Clean</h3>
+        <ul>
+          <li>Handle missing/inconsistent data, remove duplicates, standardize formats.</li>
+          <li><strong>Benefit:</strong> Produces accurate, trustworthy datasets for downstream analysis.</li>
+        </ul>
+
+        <h3>4. Shape</h3>
+        <ul>
+          <li>Transform data into analytical-ready structures using fact and dimension tables from the star schema.</li>
+          <li><strong>Benefit:</strong> Simplifies querying and integration with BI tools.</li>
+        </ul>
+
+        <h3>5. Analyze</h3>
+        <ul>
+          <li>Perform exploratory analysis on customer behavior, product performance, and sales trends.</li>
+          <li>Identify seasonality, growth patterns, and revenue drivers.</li>
+          <li><strong>Benefit:</strong> Enables actionable business decisions and data-driven strategy.</li>
+        </ul>
+
+      </section>
+
+      <!-- Stage 3: Power BI Visualization -->
+      <section>
+        <h2>Stage 3: Power BI Visualization</h2>
+        <p>
+          Star-schema data is visualized in Power BI dashboards for interactive slicing, drill-down, and KPI monitoring. 
+          Dashboards highlight products, sales trends, and customer segments across international markets.
+        </p>
+        <p><strong>Benefit:</strong> Clear, interactive view of business performance to support strategic decisions.</p>
+      </section>
+
+      <!-- Tools & Links -->
+      <section>
+        <h2>Tools & Important Links</h2>
+        <ul>
+          <li>SQL Server, SSMS, Python, Power BI</li>
+          <li><a href="datasets/">Project Datasets (CSV)</a></li>
+          <li><a href="https://www.microsoft.com/en-us/sql-server/sql-server-downloads">SQL Server Express</a></li>
+          <li><a href="https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16">SSMS</a></li>
+          <li><a href="https://www.drawio.com/">Draw.io</a> – for architecture and ETL diagrams</li>
+          <li><a href="https://www.notion.com/templates/sql-data-warehouse-project">Notion Project Template</a></li>
+          <li><a href="https://github.com/AnaghaPaul/SqlDataWarehouseProject" target="_blank">View full project on GitHub</a></li>
+        </ul>
+      </section>
+
+      <!-- Footer -->
+      <footer>
+        <p>
+          Project by Anagha Paul · Data Analytics & Data Warehouse Case Study · MIT License
+        </p>
+      </footer>
+
+    </section>
+
+  </div>
+</div>
+</body>
+</html>
