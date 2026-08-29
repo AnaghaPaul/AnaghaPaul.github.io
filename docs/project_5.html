@@ -19,132 +19,422 @@
   <main id="main">
 
     <section class="post">
-      <header>
-        <h1>Modern Retail & Order Management Data Warehouse</h1>
+      <!-- Project Header -->
+  <header>
+    <h1>Modern Retail & Order Management Data Warehouse</h1>
+    <p>
+      An end-to-end retail analytics solution built with SQL Server, dimensional modeling,
+      Medallion Architecture, SQL analysis, and Power BI. The project integrates CRM and ERP
+      data to support sales performance, customer behavior, product analysis, profitability,
+      and order lifecycle reporting across multiple international markets.
+    </p>
+  </header>
+
+  <!-- Project Overview -->
+  <section>
+    <h2>Project Overview</h2>
+
+    <p>
+      This project builds an analytics-ready data warehouse for a retail business selling
+      bicycles, sports clothing, and related components across Canada, the United States,
+      the United Kingdom, Germany, France, and Australia.
+    </p>
+
+    <p>
+      Operational data from CRM and ERP systems is integrated through a
+      <strong>Bronze → Silver → Gold Medallion Architecture</strong> and transformed into
+      a <strong>Kimball-style Star Schema</strong>. The Gold layer provides a consistent
+      analytical foundation for SQL analysis and Power BI reporting.
+    </p>
+
+    <p>
+      The analytical workflow focuses on four key business questions:
+    </p>
+
+    <ul>
+      <li>How are revenue and profitability changing over time?</li>
+      <li>Which products, categories, and markets drive performance?</li>
+      <li>What seasonal patterns exist in sales and profit?</li>
+      <li>How does customer revenue evolve after the first purchase?</li>
+    </ul>
+  </section>
+
+
+  <!-- Stage 1 -->
+  <section>
+    <h2>Stage 1: Data Warehouse Creation</h2>
+
+    <p>
+      The warehouse was designed using a layered Medallion Architecture to separate raw
+      ingestion, data preparation, and business-ready analytical structures.
+    </p>
+
+    <div class="cards">
+
+      <div class="card">
+        <h4>Bronze Layer</h4>
         <p>
-          SQL Server–based data warehouse for a retail company selling bicycles, sports clothing,
-          and components across multiple international markets. Supports sales analysis, customer behavior,
-          product performance, and order lifecycle reporting using a dimensional star schema model.
+          Raw CRM and ERP data ingested without business transformations,
+          preserving source fidelity and traceability.
         </p>
-      </header>
+      </div>
 
-      <!-- Project Overview -->
-      <section>
-        <h2>Project Overview</h2>
+      <div class="card">
+        <h4>Silver Layer</h4>
         <p>
-          The data warehouse integrates CRM and ERP source systems, consolidates operational data,
-          and delivers analytics-ready datasets. Role-playing date dimensions enable time-based
-          analysis across order, shipping, and due dates. Power BI dashboards visualize insights
-          for business decision-making.
+          Data standardized, cleansed, deduplicated, and conformed across
+          source systems for consistent downstream analysis.
         </p>
-      </section>
+      </div>
 
-      <!-- Stage 1 -->
-      <section>
-        <h2>Stage 1: Data Warehouse Creation (Medallion Architecture)</h2>
-
-        <div class="cards">
-          <div class="card">
-            <h4>Bronze Layer</h4>
-            <p>Raw CRM and ERP data ingested as-is to preserve source fidelity and traceability.</p>
-          </div>
-          <div class="card">
-            <h4>Silver Layer</h4>
-            <p>Data cleansed, standardized, deduplicated, and enriched with reusable reference data.</p>
-          </div>
-          <div class="card">
-            <h4>Gold Layer</h4>
-            <p>Business-ready datasets modeled using a star schema optimized for analytics and BI.</p>
-          </div>
-        </div>
-
+      <div class="card">
+        <h4>Gold Layer</h4>
         <p>
-          <strong>Benefits:</strong> Improved data quality, scalable analytics, and faster query
-          performance enabling reliable business insights.
+          Business-ready fact and dimension tables organized into a
+          Star Schema for analytical workloads and BI reporting.
         </p>
+      </div>
 
-        <figure>
-          <img src="images/DataArchitecture.png" alt="Medallion Data Architecture"  style="width:100%; border-radius:10px;">
-          <figcaption>
-            <strong>Data Architecture.</strong> Bronze, Silver, and Gold layers for structured ETL processing.
-          </figcaption>
-        </figure>
+    </div>
 
-        <figure>
-          <img src="images/fact_table_star_schema.png" alt="Fact Table Design"  style="width:100%; border-radius:10px;">
-          <figcaption>
-            <strong>Fact Table.</strong> Centralized sales transactions supporting dimensional analysis.
-          </figcaption>
-        </figure>
+    <h3>Dimensional Model</h3>
 
-        <!-- New Star Schema Image -->
-        <figure>
-          <img src="images/data_model_starschema.png" alt="Star Schema Data Model" style="width:100%; border-radius:10px;">
-          <figcaption>
-            <strong>Star Schema Data Model.</strong> Visual representation of fact and dimension tables.
-          </figcaption>
-        </figure>
+    <p>
+      The central <strong>fact_sales</strong> table is defined at the
+      <strong>order-line grain</strong>:
+    </p>
 
-        <figure>
-          <img src="images/data_flow.png" alt="ETL Data Flow Diagram"  style="width:100%; border-radius:10px;">
-          <figcaption>
-            <strong>Data Flow Diagram.</strong> ETL pipelines from CRM & ERP to analytics-ready warehouse tables.
-          </figcaption>
-        </figure>
-      </section>
+    <p>
+      <strong>One row represents one product purchased by one customer
+      within a single order.</strong>
+    </p>
 
-      <!-- Stage 2 -->
-      <section>
-        <h2>Stage 2: SQL-Based Data Analysis</h2>
-        <p>Analysis follows five structured stages: <strong>Explore → Profile → Clean → Shape → Analyze</strong>.</p>
+    <p>
+      The analytical model contains:
+    </p>
 
-        <figure>
-          <img src="images/DataAnalysisWorkFlow.png" alt="Data Analysis Workflow"  style="width:100%; border-radius:10px;">
-          <figcaption>
-            <strong>Data Analysis Workflow.</strong> Transforming curated warehouse data into actionable insights.
-          </figcaption>
-        </figure>
+    <ul>
+      <li><strong>fact_sales</strong> — revenue, quantity, unit price, and transactional keys</li>
+      <li><strong>dim_customer</strong> — customer attributes and demographics</li>
+      <li><strong>dim_product</strong> — product, category, and subcategory hierarchy</li>
+      <li><strong>dim_date</strong> — shared calendar dimension</li>
+      <li><strong>dim_order_date</strong> — role-playing date view</li>
+      <li><strong>dim_shipping_date</strong> — role-playing date view</li>
+      <li><strong>dim_due_date</strong> — role-playing date view</li>
+    </ul>
 
-        <h3>Explore</h3>
-        <ul>
-          <li>Understand structure, relationships, and anomalies</li>
-          <li><strong>Benefit:</strong> Guides transformation planning</li>
-        </ul>
+    <p>
+      Additive measures such as <strong>sales_amount</strong> and
+      <strong>quantity</strong> can be aggregated across dimensions, while
+      <strong>unit_price</strong> is retained at transaction grain for
+      average selling price and historical pricing analysis rather than summed.
+    </p>
 
-        <h3>Profile</h3>
-        <ul>
-          <li>Assess statistics and data quality</li>
-          <li><strong>Benefit:</strong> Early issue detection</li>
-        </ul>
+    <figure>
+      <img src="images/DataArchitecture.png"
+           alt="Medallion Data Architecture"
+           style="width:100%; border-radius:10px;">
 
-        <h3>Clean</h3>
-        <ul>
-          <li>Handle missing values, duplicates, and inconsistencies</li>
-          <li><strong>Benefit:</strong> Trustworthy datasets</li>
-        </ul>
+      <figcaption>
+        <strong>Data Architecture.</strong>
+        Bronze, Silver, and Gold layers separating ingestion, transformation,
+        and analytical modeling.
+      </figcaption>
+    </figure>
 
-        <h3>Shape</h3>
-        <ul>
-          <li>Transform data into star-schema structures</li>
-          <li><strong>Benefit:</strong> Simplified querying and BI integration</li>
-        </ul>
+    <figure>
+      <img src="images/fact_table_star_schema.png"
+           alt="Fact Table Design"
+           style="width:100%; border-radius:10px;">
 
-        <h3>Analyze</h3>
-        <ul>
-          <li>Identify trends, seasonality, and revenue drivers</li>
-          <li><strong>Benefit:</strong> Actionable business insights</li>
-        </ul>
-      </section>
+      <figcaption>
+        <strong>Fact Table.</strong>
+        Order-line-level sales transactions forming the analytical core of the warehouse.
+      </figcaption>
+    </figure>
 
-      <!-- Stage 3 -->
-      <section>
-        <h2>Stage 3: Power BI Visualization</h2>
+    <figure>
+      <img src="images/data_model_starschema.png"
+           alt="Star Schema Data Model"
+           style="width:100%; border-radius:10px;">
+
+      <figcaption>
+        <strong>Star Schema.</strong>
+        Fact and conformed dimensions supporting consistent analytical queries.
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/data_flow.png"
+           alt="ETL Data Flow Diagram"
+           style="width:100%; border-radius:10px;">
+
+      <figcaption>
+        <strong>Data Flow.</strong>
+        CRM and ERP source data progressing through transformation layers
+        into the analytical warehouse.
+      </figcaption>
+    </figure>
+
+  </section>
+
+
+  <!-- Data Quality -->
+  <section>
+    <h2>Data Quality & Validation</h2>
+
+    <p>
+      Before analysis, the analytical layer was validated to ensure that the warehouse
+      produced reliable and consistent results.
+    </p>
+
+    <ul>
+      <li>Validated fact-table grain and order-line uniqueness</li>
+      <li>Checked referential integrity between fact and dimension tables</li>
+      <li>Validated surrogate-key mappings</li>
+      <li>Identified and handled null values in analytical fields</li>
+      <li>Standardized unknown or missing foreign keys using an Unknown dimension member</li>
+      <li>Cross-validated integrated CRM and ERP attributes</li>
+      <li>Reviewed distributions of revenue and quantity measures</li>
+    </ul>
+
+    <p>
+      These checks helped prevent broken joins, duplicate counting, and inconsistent
+      aggregations during downstream analysis and BI reporting.
+    </p>
+
+  </section>
+
+
+  <!-- Stage 2 -->
+  <section>
+    <h2>Stage 2: SQL-Based Data Analysis</h2>
+
+    <p>
+      SQL was used beyond basic querying to validate the warehouse, investigate
+      customer behavior, calculate business metrics, and identify trends.
+    </p>
+
+    <p>
+      The analytical workflow followed:
+      <strong>Explore → Profile → Clean → Shape → Analyze</strong>.
+    </p>
+
+    <figure>
+      <img src="images/DataAnalysisWorkFlow.png"
+           alt="Data Analysis Workflow"
+           style="width:100%; border-radius:10px;">
+
+      <figcaption>
+        <strong>Data Analysis Workflow.</strong>
+        A structured process for validating and analyzing curated warehouse data.
+      </figcaption>
+    </figure>
+
+
+    <h3>Revenue & Profitability Analysis</h3>
+
+    <p>
+      Revenue and gross profit were analyzed across time, product categories,
+      and markets. Gross profit was calculated as:
+    </p>
+
+    <p>
+      <strong>Gross Profit = Sales Revenue − Product Cost</strong>
+    </p>
+
+    <figure>
+      <img src="images/sales_trend_analysis.png"
+           alt="Sales Trend Analysis"
+           style="width:100%; border-radius:10px;">
+
+      <figcaption>
+        <strong>Sales Trend Analysis.</strong>
+        Revenue performance across the available sales period.
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/profit_trend.png"
+           alt="Profit Trend Analysis"
+           style="width:100%; border-radius:10px;">
+
+      <figcaption>
+        <strong>Profit Trend Analysis.</strong>
+        Gross profit trends derived from transaction-level sales and product cost.
+      </figcaption>
+    </figure>
+
+
+    <h3>Seasonality</h3>
+
+    <p>
+      Revenue and gross profit exhibit recurring seasonal patterns, with performance
+      strengthening toward the end of the year and reaching a high point in December.
+      A smaller and less consistent uplift is also visible around June.
+    </p>
+
+    <p>
+      The recurring year-end pattern suggests an opportunity to investigate the
+      contribution of holiday demand, promotions, product mix, and other seasonal
+      factors. The sharp decline at the beginning of 2014 is associated with
+      incomplete data and was therefore excluded from interpretation as a genuine
+      performance decline.
+    </p>
+
+    <figure>
+      <img src="images/profit_loss_chart.png"
+           alt="Profit and Loss Trend"
+           style="width:100%; border-radius:10px;">
+
+      <figcaption>
+        <strong>Revenue & Profit Trend.</strong>
+        Comparison of revenue and gross profit over time.
+      </figcaption>
+    </figure>
+
+  </section>
+
+
+  <!-- Cohort Analysis -->
+  <section>
+
+    <h2>Stage 3: Customer Cohort Analysis</h2>
+
+    <p>
+      Cohort analysis was used to understand how customer value changes after
+      acquisition. Customers were grouped according to their first purchase month,
+      and subsequent purchasing activity was tracked using lifecycle months.
+    </p>
+
+    <h3>Metrics Analyzed</h3>
+
+    <ul>
+      <li>Total revenue per acquisition cohort</li>
+      <li>Average Revenue per Customer (ARPC)</li>
+      <li>Revenue contribution from repeat purchases</li>
+      <li>Cumulative customer revenue over the observed lifecycle</li>
+    </ul>
+
+    <h3>Key Findings</h3>
+
+    <ul>
+      <li>
+        <strong>Customer revenue is heavily front-loaded.</strong>
+        The first purchase month contributes the largest share of observed cohort revenue.
+      </li>
+
+      <li>
+        <strong>Repeat-purchase contribution is comparatively smaller.</strong>
+        Post-acquisition revenue is lower and varies across cohorts.
+      </li>
+
+      <li>
+        <strong>Later cohorts show relatively greater contribution from repeat purchases,</strong>
+        while acquisition-month ARPC declines across cohorts.
+      </li>
+
+      <li>
+        <strong>Cohort performance is not uniform,</strong>
+        indicating differences in customer value and purchasing behavior across acquisition periods.
+      </li>
+    </ul>
+
+    <p>
+      These findings suggest that customer acquisition and post-acquisition monetization
+      should be evaluated together rather than relying solely on first-purchase revenue.
+      Further analysis could investigate whether changes in product mix, customer geography,
+      pricing, or acquisition channels explain differences between cohorts.
+    </p>
+
+    <figure>
+      <img src="images/total_revenue_per_cohort.png"
+           alt="Total Revenue per Cohort"
+           style="width:100%; border-radius:10px;">
+
+      <figcaption>
+        <strong>Total Revenue per Cohort.</strong>
+        Revenue contribution across customer acquisition cohorts.
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/ARPC_heatmap.png"
+           alt="ARPC Cohort Heatmap"
+           style="width:100%; border-radius:10px;">
+
+      <figcaption>
+        <strong>ARPC Cohort Heatmap.</strong>
+        Average revenue per customer across acquisition cohorts and lifecycle months.
+      </figcaption>
+    </figure>
+
+  </section>
+
+
+  <!-- Stage 4 -->
+  <section>
+
+    <h2>Stage 4: Power BI Reporting</h2>
+
+    <p>
+      The Gold-layer Star Schema was connected to Power BI to provide an interactive
+      analytical layer for business users.
+    </p>
+
+    <ul>
+      <li>Revenue and profitability KPIs</li>
+      <li>Sales trend and seasonality analysis</li>
+      <li>Customer and cohort analysis</li>
+      <li>Product and category performance</li>
+      <li>Regional and country-level comparisons</li>
+      <li>Interactive filtering and drill-down analysis</li>
+    </ul>
+
+    <p>
+      The model is designed so that Power BI users can explore business performance
+      without rebuilding transformation logic or complex source-system relationships.
+    </p>
+
+  </section>
+
+
+  <!-- Business Insights -->
+  <section>
+
+    <h2>Key Business Insights</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h4>Strong Q4 Seasonality</h4>
         <p>
-          Star-schema data is visualized in Power BI dashboards with interactive filtering,
-          drill-downs, and KPI tracking across international markets.
+          Revenue and gross profit strengthen toward year-end, with December
+          consistently showing strong performance.
         </p>
-        <p><strong>Benefit:</strong> Clear, decision-ready business intelligence.</p>
-      </section>
+      </div>
+
+      <div class="card">
+        <h4>Front-Loaded Customer Value</h4>
+        <p>
+          The majority of observed cohort revenue is generated during the
+          initial purchase period.
+        </p>
+      </div>
+
+      <div class="card">
+        <h4>Repeat Purchase Opportunity</h4>
+        <p>
+          Later customer cohorts show greater relative contribution from
+          repeat purchases, creating an opportunity to investigate retention
+          and post-acquisition monetization.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
 
       <!-- Tools -->
       <section>
